@@ -24,7 +24,7 @@ const LayoutWrapper = ({ children }: Props) => {
                   <Logo />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
+                  <div className="hidden h-6 text-2xl font-semibold sm:block text-gray-900 dark:text-primary-500">
                     {siteMetadata.headerTitle}
                   </div>
                 ) : (
@@ -39,7 +39,7 @@ const LayoutWrapper = ({ children }: Props) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="p-1 font-medium text-gray-900 dark:text-green-400 hover:dark:text-green-300 sm:p-4"
                 >
                   {link.title}
                 </Link>
