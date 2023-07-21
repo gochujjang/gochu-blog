@@ -1,0 +1,175 @@
+---
+title: 'CP Technofair 2023'
+date: '2023-07-21'
+lastmod: '2023-07-21'
+tags: ['CP', 'Technofair', '2023']
+draft: false
+summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
+images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
+authors: ['default']
+layout: PostLayout
+canonicalUrl: https://gochu.tech/blog/cp-technofair-2023/
+---
+
+# Introduction
+
+Berikut ini adalah beberapa arsip soal & solver competitive programming pada acara TechnoFair 10.0 yang saya kerjakan.
+
+<br/>
+# Warm up
+## Ganjil Genap
+
+**Deskripsi Soal**\
+Diberikan sebuah bilangan, tentukan apakah bilangan tersebut merupakan bilangan genap atau
+bilangan ganjil
+
+**Format Masukan**\
+Sebuah bilangan $N(1 <= N <= 10^8)$
+
+**Format Keluaran**\
+Keluarkan "Genap" tanpa tanda petik dua jika bilangan tersebut merupakan bilangan genap atau
+"Ganjil" tanpa tanda petik dua jika bilangan tersebut adalah bilangan ganjil
+
+**Solver**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x;
+    cin >> x;
+    if (x % 2 == 0){
+        cout << "Genap";
+    }else{
+        cout << "Ganjil";
+    }
+    return 0;
+}
+```
+
+## Halo Technofair
+
+**Deskripsi Soal**\
+Selamat datang di kompetisi Technofair 10.0, mari kita buka dengan saling menyapa.
+
+**Format Masukan**\
+Tidak ada masukan untuk soal ini
+
+**Format Keluaran**\
+Sebuah kalimat berisi tulisan “Halo Technofair 10.0!”
+
+**Solver**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Halo Technofair 10.0!";
+}
+```
+
+## Rhythm Game
+
+**Deskripsi Soal**\
+Yujin sangat suka bermain game, salah satu tema game yang ia sukai adalah rhythm game. Rhythm
+game adalah game dimana pemainnya diharuskan mengikuti irama lagu dengan menekan note
+yang berjalan untuk mendapatkan combo dan score. Dalam rhythm game yang dimainkan oleh
+Yujin, mula-mula memiliki combo sebanyak 1 dan score sebanyak 0, combo maksimal dalam
+game tersebut adalah 12. Terdapat 2 kondisi yaitu Perfect dan Miss
+- Perfect: menambahkan skor sebanyak combo saat ini kemudian menambah kelipatan combo sebanyak 1
+- Miss: mereset kelipatan combo menjadi 1
+Diberikan N buat note yang terdiri dari Perfect dan Miss, hitunglah maksimal score yang bisa
+didapatkan Yujin.
+
+
+**Format Masukan**\
+Baris pertama berisi sebuah bilangan N dan baris kedua berisi N buah karakter “+” atau “-“
+
+**Format Keluaran**\
+Total skor yang didapatkan oleh Yujin
+
+**Solver**
+```cpp
+#include <bits/stdc++.h> 
+using namespace std;
+
+int main(){
+    long long N, T = 0, M = 1;
+    string C;
+
+    cin >> N >> C;
+
+    char arr[C.length() + 1];
+    strcpy(arr, C.c_str()); 
+	for (int i = 0; i < N; i++) {
+        if (arr[i] == '+')
+        {
+            T += M;
+            if (M != 12)
+            {
+                M += 1;
+            }else {
+                M = M;
+            }
+
+        }else{
+            M = 1;
+        }
+     }
+    cout << T;
+	return 0;     
+}
+```
+
+<br/>
+# Penyisihan
+## Jasa Ketik Keliling
+
+**Deskripsi Soal**\
+Tenten merupakan seorang pengusaha jasa ketik keliling, tapi ia memiliki sebuah keyboard yang sudah
+mulai rusak, saat ia mengetik sebuah string N menggunakan keyboardnya, karakter yang masuk sebagai
+inputan akan muncul 2 kali, tentu saja ini meresahkan bagi tenten
+Kamu sebagai temannya yang baik ingin membantunya untuk memperbaiki hasil ketikan Tenten
+ke bentuk yang seharusnya.
+
+
+**Format Masukan**\
+sebuah string N
+
+**Format Keluaran**\
+hasil string sesuai deskripsi soal
+
+**Solver**
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+string doubleChecker(string n){
+    int i = 0, j = 0;
+    string temp = "";
+
+    while (i < n.length()) {
+        if (n[i] == n[j]) {
+            i++;
+            if (i - j == 4) {
+                temp += n[j];
+                temp += n[j];
+                j = i;
+            }
+        } else {
+            temp += n[j];
+            j = i;
+            i++;
+        }
+    }
+    temp += n[j];
+    return temp;
+}
+
+int main(){
+    string n;
+    cin >> n;
+    cout << doubleChecker(n) << endl;
+}
+```~
