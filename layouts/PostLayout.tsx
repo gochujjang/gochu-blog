@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
@@ -104,7 +102,8 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="
+              <div
+                className="
 
               prose max-w-none pt-10 pb-8 dark:prose-dark 
               dark:prose-p:text-chamois-200 
@@ -113,8 +112,9 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               dark:prose-ol:text-chamois-200 
               dark:prose-headings:text-chamois-100
               dark:prose-strong:text-chamois-100"
-              
-              >{children}</div>
+              >
+                {children}
+              </div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(slug)} rel="nofollow">
                   {'Discuss on Twitter'}
