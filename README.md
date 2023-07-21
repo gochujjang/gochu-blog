@@ -1,6 +1,7 @@
 # gochu-blog
 
-This is my custom template NextJS + TailwindCSS MDX Blog by [timlrx](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+This is my custom template NextJS + TailwindCSS MDX Blog by [timlrx](https://github.com/timlrx/tailwind-nextjs-starter-blog)\
+Check out my website [here!](https://gochu.tech/)
 
 
 ## Quick Start Guide
